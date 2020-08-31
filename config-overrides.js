@@ -15,5 +15,6 @@ module.exports = override(
   addReactRefresh({ disableRefreshCheck: true }),
   addLessLoader({
     javascriptEnabled: true,
+    modifyVars: { "@primary-color": "rgb(51,122,183)" },
   }),
 )

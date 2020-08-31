@@ -1,38 +1,31 @@
-import React from "react"
-import logo from "../assets/logo.svg"
-import "./App.css"
-import { Formik } from "formik"
-import { Input, SubmitButton, Form } from "formik-antd"
-import { notification } from "antd"
-import { AntDesignOutlined } from "@ant-design/icons"
+import React from 'react'
+import './App.less'
+
+import { BrowserRouter as Router, Switch, Link } from 'react-router-dom'
+import { Layout, Typography } from 'antd'
+
+import Header from '../components/header'
+
+const { Content } = Layout
+const { Text } = Typography
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-
-      <div style={{ background: "white", padding: "20px" }}>
-        <Formik
-          initialValues={{ field1: "hello world" }}
-          onSubmit={(values, f) => {
-            notification.info({ message: values.field1 })
-            f.setSubmitting(false)
-          }}
-        >
-          <Form>
-            <Input name="field1" />
-            <SubmitButton
-              style={{ marginTop: 10 }}
-              icon={<AntDesignOutlined />}
-            >
-              Submit
-            </SubmitButton>
-          </Form>
-        </Formik>
+    <Router>
+      <div className='App'>
+        <div className='app-container'>
+          <Layout>
+            <Header />
+            <Layout>
+              <div className='content-container'>
+                <div className='sider'>123231</div>
+                <Content className='content' />
+              </div>
+            </Layout>
+          </Layout>
+        </div>
       </div>
-    </div>
+    </Router>
   )
 }
 
