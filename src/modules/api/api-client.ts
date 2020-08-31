@@ -1,8 +1,8 @@
-import { IApiClient } from "../../interfaces/api/IApi"
+import { IApiClient } from '../../interfaces/api/IApi'
 
 class ApiClient implements IApiClient {
   async getResource(url: string) {
-    const _apiUrl = "https://swapi.dev/api"
+    const _apiUrl = 'https://swapi.dev/api'
     const res = await fetch(`${_apiUrl}${url}`)
 
     if (!res.ok) {
@@ -12,7 +12,7 @@ class ApiClient implements IApiClient {
   }
 
   getAllPeople() {
-    return this.getResource("/people/")
+    return this.getResource('/people/')
   }
 
   getPersonById(id: string) {
@@ -20,7 +20,7 @@ class ApiClient implements IApiClient {
   }
 
   getAllPlanet() {
-    return this.getResource("/planets/")
+    return this.getResource('/planets/')
   }
 
   getPlanetById(id: string) {
@@ -28,7 +28,7 @@ class ApiClient implements IApiClient {
   }
 
   getAllShips() {
-    return this.getResource("/starships/")
+    return this.getResource('/starships/')
   }
 
   getShipById(id: string) {
