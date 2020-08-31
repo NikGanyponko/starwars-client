@@ -1,10 +1,13 @@
 import React from 'react'
 import './App.less'
 
-import { BrowserRouter as Router, Switch, Link } from 'react-router-dom'
-import { Layout, List, Typography } from 'antd'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Layout, Typography } from 'antd'
 
 import Header from '../components/header'
+import Planets from '../features/planets'
+import People from '../features/people'
+import Ships from '../features/ships'
 
 const { Content } = Layout
 const { Text } = Typography
@@ -18,8 +21,13 @@ function App() {
             <Header />
             <Layout>
               <div className='content-container'>
-                <div className='sider'>123231</div>
-                <Content className='content' />
+                <Router>
+                  <Switch>
+                    <Route path='/planets/:id' render={Planets} />
+                    <Route path='/people/:id' render={People} />
+                    <Route path='/starships/:id' render={Ships} />
+                  </Switch>
+                </Router>
               </div>
             </Layout>
           </Layout>
