@@ -13,8 +13,7 @@ module.exports = override(
     libraryDirectory: "es",
   }),
   addReactRefresh({ disableRefreshCheck: true }),
-  // addLessLoader({
-  //     javascriptEnabled: true,
-  //     modifyVars: { '@primary-color': 'rgb(51,122,183)' },
-  // }),
+  addLessLoader({
+    javascriptEnabled: true,
+  }),
 )

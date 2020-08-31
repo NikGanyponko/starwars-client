@@ -1,27 +1,8 @@
-# ✨ CRA + Ant-Design + X Boilerplate ✨
-
-This is a boilerplate project for a React based Single Page Application. It is based on the popular create-react-app template and uses ant designs ui components.
-
 # Features
 
-:white_check_mark: Awesome development setup (cra, cra-rewired, typescript, fast-refresh)
+(1) API is https://rapidapi.com/rapidapi/api/movie-database-imdb-alternative/details ;
+(2) main feats:
 
-:white_check_mark: Awesome UI Components (ant design, themeable)
-
-:white_check_mark: Client side routing (react-router)
-
-:white_check_mark: Easy forms (formik + bindings)
-
-# Getting started
-
-Click the green `Use this template` button to copy all content to a new github repository or execute following commands on your cli:
-
-```
-git clone https://github.com/jannikbuschke/cra-antd-x
-cd cra-antd-x/
-rm .git -rf
-npm install
-npm run start
 ```
 
 | Dependency  | Descript | Popularity |
@@ -36,3 +17,4 @@ npm run start
 | [dayjs](https://github.com/iamkun/dayjs) | Tiny datetime library | ![Github stars](https://img.shields.io/github/stars/iamkun/dayjs) |
 | [styled-components](https://github.com/styled-components/styled-components) | Css-in-js library (future unclear) | ![Github stars](https://img.shields.io/github/stars/styled-components/styled-components) |
 | [less](https://github.com/less/less.js) | Dynamic css (used because of ant design, future unclear) | ![Github stars](https://img.shields.io/github/stars/less/less.js) |
+```
