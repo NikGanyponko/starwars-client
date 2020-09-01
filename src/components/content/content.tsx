@@ -1,22 +1,25 @@
 import React from 'react'
 import { Layout } from 'antd'
+import { List, Typography } from 'antd'
 import { IContentData } from '../../interfaces/IStore'
 
-import List from '../list'
-
 const { Content } = Layout
+const { Text } = Typography
 
-const Sider = ({ img, description }: any) => {
+const Sider = ({ img, description }: IContentData) => {
   return (
     <Content className='content'>
       <div className='content-card'>
-        <img
-          src={'https://starwars-visualguide.com/assets/img/planets/2.jpg'}
-          className='content-card__img'
-          alt='image'
-        />
+        <img src={img} className='content-card__img' alt='image' />
         <div className='content-card__list'>
-          <List listData={description} />
+          <List
+            dataSource={description}
+            renderItem={(item: string) => (
+              <List.Item>
+                <Text>{item}</Text>
+              </List.Item>
+            )}
+          />
         </div>
       </div>
     </Content>

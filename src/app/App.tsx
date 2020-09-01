@@ -22,19 +22,10 @@ const App = () => {
                   <Route path='/planets'>
                     <Planets />
                   </Route>
-                  <Route path='/planets/:id'>
-                    <Planets />
-                  </Route>
                   <Route path='/people'>
                     <People />
                   </Route>
-                  <Route path='/people/:id'>
-                    <People />
-                  </Route>
                   <Route path='/starships'>
-                    <Ships />
-                  </Route>
-                  <Route path='/starships/:id'>
                     <Ships />
                   </Route>
                 </Switch>

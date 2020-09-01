@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation, useRouteMatch } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../../store/root-reducer'
 
-import { fetchPlanets } from '../feats-slice'
+import { fetchPlanets, fetchPlanetById } from '../feats-slice'
 import { transformPlanetResponse } from '../../modules/transform-response'
 
 import Sider from '../../components/sider'
 import Content from '../../components/content'
 
 const Planets = () => {
-  const history = useHistory()
   const dispatch = useDispatch()
   const { listData, contentData } = useSelector(
     (state: RootState) => state.feats,
@@ -25,14 +24,16 @@ const Planets = () => {
     return {
       title: item.name,
       id: id,
-      onItemClick: () => history.push(`/planets/${id}`),
+      onItemClick: () => dispatch(fetchPlanetById(id)),
     }
   })
+
+  console.log('contentData', contentData)
 
   return (
     <>
       <Sider listData={planetsData} />
-      <Content img='test-url' description={['data1', 'data2', 'data3']} />
+      <Content img={contentData.img} description={contentData.description} />
     </>
   )
 }

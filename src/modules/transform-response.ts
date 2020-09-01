@@ -4,10 +4,10 @@ import {
   IShipResponse,
 } from '../interfaces/IApi'
 
-export const transformPlanetResponse = (res: IPlanetResponse, id: string) => {
+export const transformPlanetResponse = (res: any) => {
+  const id = res.url.match(/\/(\d+?)\//)[1]
   return {
-    id: id,
-    data: [
+    description: [
       res.name,
       'Climate : ' + res.climate,
       'Diameter : ' + res.diameter,
@@ -18,13 +18,13 @@ export const transformPlanetResponse = (res: IPlanetResponse, id: string) => {
       'Surface water : ' + res.surface_water,
       'Terrain : ' + res.terrain,
     ],
-    imgUrl: `https://starwars-visualguide.com/assets/img/planets/${id}.jpg`,
+    img: `https://starwars-visualguide.com/assets/img/planets/${id}.jpg`,
   }
 }
 
-export const transformShipResponse = (res: IShipResponse, id: string) => {
+export const transformShipResponse = (res: any) => {
+  const id = res.url.match(/\/(\d+?)\//)[1]
   return {
-    id: id,
     data: [
       res.name,
       'MGLT : ' + res.MGLT,
@@ -44,9 +44,9 @@ export const transformShipResponse = (res: IShipResponse, id: string) => {
   }
 }
 
-export const transformPersonResponse = (res: IPersonResponse, id: string) => {
+export const transformPersonResponse = (res: any) => {
+  const id = res.url.match(/\/(\d+?)\//)[1]
   return {
-    id: id,
     data: [
       res.name,
       'Birth year : ' + res.birth_year,
