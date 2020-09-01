@@ -1,14 +1,14 @@
 export interface IApiClient {
-  getResource(url: string): Promise<IBaseResponse>
-  getAllPeople(): Promise<IAllPersonResponse>
-  getPersonById(id: string): Promise<IPersonResponse>
-  getAllPlanet(): Promise<IAllPlanetResponse>
-  getPlanetById(id: string): Promise<IPlanetResponse>
-  getAllShips(): Promise<IAllShipResponse>
-  getShipById(id: string): Promise<IShipResponse>
+  getResource(url: string): Promise<Response>
+  getAllPeople(): Promise<Response>
+  getPersonById(id: string): Promise<Response>
+  getAllPlanets(): Promise<Response>
+  getPlanetById(id: string): Promise<Response>
+  getAllShips(): Promise<Response>
+  getShipById(id: string): Promise<Response>
 }
 
-interface IBaseResponse {
+interface IBaseResponse extends Response {
   count: number
   next: string
   previous: null
@@ -22,7 +22,7 @@ interface IAllPersonResponse {
   results: IPersonResponse[]
 }
 
-interface IPersonResponse {
+export interface IPersonResponse {
   name: string
   height: string
   mass: string
@@ -41,14 +41,14 @@ interface IPersonResponse {
   url: string
 }
 
-interface IAllPlanetResponse {
+export interface IAllPlanetsResponse {
   count: number
   next: string
   previous: null
   results: IPlanetResponse[]
 }
 
-interface IPlanetResponse {
+export interface IPlanetResponse {
   name: string
   rotation_period: string
   orbital_period: string
@@ -72,7 +72,7 @@ interface IAllShipResponse {
   results: IShipResponse[]
 }
 
-interface IShipResponse {
+export interface IShipResponse {
   name: string
   model: string
   manufacturer: string

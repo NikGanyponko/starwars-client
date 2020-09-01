@@ -1,11 +1,15 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { IFeatsSlice, IListData } from '../interfaces/IStore'
+import { IAllPlanetsResponse } from '../interfaces/IApi'
 import api from '../modules/api-client'
 
-const fetchPlanets = createAsyncThunk('planets/fetchPlanets', async () => {
-  const response = await api.getAllPlanet()
-  return response.data
-})
+export const fetchPlanets = createAsyncThunk(
+  'planets/fetchPlanets',
+  async () => {
+    const response = await api.getAllPlanets()
+    return response.json() as Promise<IAllPlanetsResponse>
+  },
+)
 
 const initialState: IFeatsSlice = {
   listData: [],
@@ -21,11 +25,10 @@ const profileSlice = createSlice({
       state.listData = listData
     },
   },
-  extraReducers: {
-    // TODO in builder https://redux-toolkit.js.org/usage/usage-with-typescript#type-safety-with-extrareducers
-    [fetchPlanets.fulfilled]: (state, action) => {
-      state.listData = action.payload
-    },
+  extraReducers: (builder) => {
+    builder.addCase(fetchPlanets.fulfilled, (state, action) => {
+      state.listData = action.payload.results
+    })
   },
 })
 

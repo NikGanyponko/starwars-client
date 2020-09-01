@@ -1,12 +1,12 @@
 import React from 'react'
+
+import { IListProps } from '../../interfaces/IStore'
 import List from '../list'
 
-const testData = ['1', '2', '3', '4']
-
-const Sider = () => {
+const Sider = ({ listData }: IListProps) => {
   return (
     <div className='sider'>
-      <List listData={testData} />
+      <List listData={listData} />
     </div>
   )
 }

@@ -3,7 +3,7 @@ import { IApiClient } from '../interfaces/IApi'
 class ApiClient implements IApiClient {
   async getResource(url: string) {
     const res = await fetch(`https://swapi.dev/api${url}`)
-    return res.json()
+    return res
   }
 
   getAllPeople() {
@@ -14,7 +14,7 @@ class ApiClient implements IApiClient {
     return this.getResource(`/people/${id}/`)
   }
 
-  getAllPlanet() {
+  getAllPlanets() {
     return this.getResource('/planets/')
   }
 

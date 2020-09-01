@@ -1,13 +1,23 @@
 export interface IFeatsSlice {
-  listData: string[]
+  listData: any[]
   contentData: IContentData
 }
 
 export interface IListData {
-  listData: string[]
+  listData: any[]
 }
 
 export interface IContentData {
   img: string
-  description: string[]
+  description: any[]
+}
+
+export interface IListProps {
+  listData: IListItem[]
+}
+
+export interface IListItem {
+  id: string
+  title: string
+  onItemClick(): void
 }

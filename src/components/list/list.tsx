@@ -1,18 +1,20 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import { List as ListAnt, Typography } from 'antd'
-import { IListData } from '../../interfaces/IStore'
+import { IListProps, IListItem } from '../../interfaces/IStore'
 
-const List = ({ listData }: IListData) => {
+const { Text } = Typography
+
+const ItemList = ({ id, title, onItemClick }: IListItem) => {
   return (
-    <ListAnt
-      dataSource={listData}
-      renderItem={(item: string) => (
-        <ListAnt.Item>
-          <Typography.Text mark>{item}</Typography.Text>
-        </ListAnt.Item>
-      )}
-    />
+    <ListAnt.Item key={id} onClick={onItemClick}>
+      <Text>{title}</Text>
+    </ListAnt.Item>
   )
+}
+
+const List = ({ listData }: IListProps) => {
+  return <ListAnt dataSource={listData} renderItem={ItemList} />
 }
 
 export default List
