@@ -13,7 +13,7 @@ const Planets = () => {
 
   useEffect(() => {
     dispatch(fetchPlanets())
-  }, [])
+  }, [dispatch])
 
   const planetsData = listData.map((item) => {
     const id = item.url.match(/\/(\d+?)\//)[1]

@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { IFeatsSlice, IListData } from '../interfaces/IStore'
+import { createSlice } from '@reduxjs/toolkit'
+import { IFeatsSlice } from '../interfaces/IStore'
 import {
   fetchPlanets,
   fetchPlanetById,
