@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../../store/root-reducer'
-import { fetchPlanets, fetchPlanetById } from '../feats-slice'
+import { fetchPlanets, fetchPlanetById } from '../feats-thunk'
 import Content from '../../components/content'
 import Sider from '../../components/sider'
 

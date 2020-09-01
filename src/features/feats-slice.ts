@@ -1,25 +1,18 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { IFeatsSlice, IListData } from '../interfaces/IStore'
-import { IAllPlanetsResponse, IPlanetResponse } from '../interfaces/IApi'
-
-import api from '../modules/api-client'
-import { transformPlanetResponse } from '../modules/transform-response'
-
-export const fetchPlanets = createAsyncThunk(
-  'planets/fetchPlanets',
-  async () => {
-    const response = await api.getAllPlanets()
-    return response.json() as Promise<IAllPlanetsResponse>
-  },
-)
-
-export const fetchPlanetById = createAsyncThunk(
-  'planets/fetchPlanetById',
-  async (id: string) => {
-    const response = await api.getPlanetById(id)
-    return response.json() as Promise<IPlanetResponse>
-  },
-)
+import {
+  fetchPlanets,
+  fetchPlanetById,
+  fetchPeople,
+  fetchPersonById,
+  fetchShipById,
+  fetchShips,
+} from './feats-thunk'
+import {
+  transformPlanetResponse,
+  transformPersonResponse,
+  transformShipResponse,
+} from '../modules/transform-response'
 
 const initialState: IFeatsSlice = {
   listData: [],
@@ -42,6 +35,18 @@ const profileSlice = createSlice({
       })
       .addCase(fetchPlanetById.fulfilled, (state, action) => {
         state.contentData = transformPlanetResponse(action.payload)
+      })
+      .addCase(fetchPeople.fulfilled, (state, action) => {
+        state.listData = action.payload.results
+      })
+      .addCase(fetchPersonById.fulfilled, (state, action) => {
+        state.contentData = transformPersonResponse(action.payload)
+      })
+      .addCase(fetchShips.fulfilled, (state, action) => {
+        state.listData = action.payload.results
+      })
+      .addCase(fetchShipById.fulfilled, (state, action) => {
+        state.contentData = transformShipResponse(action.payload)
       })
   },
 })
