@@ -23,9 +23,8 @@ const profileSlice = createSlice({
   name: 'featsData',
   initialState,
   reducers: {
-    setListData(state, action: PayloadAction<IListData>) {
-      const { listData } = action.payload
-      state.listData = listData
+    clearContentData(state) {
+      state.contentData = { img: '', description: [] }
     },
   },
   extraReducers: (builder) => {
@@ -51,6 +50,6 @@ const profileSlice = createSlice({
   },
 })
 
-export const { setListData } = profileSlice.actions
+export const { clearContentData } = profileSlice.actions
 
 export default profileSlice.reducer

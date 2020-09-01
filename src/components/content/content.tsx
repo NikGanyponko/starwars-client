@@ -10,7 +10,9 @@ const Sider = ({ img, description }: IContentData) => {
   return (
     <Content className='content'>
       <div className='content-card'>
-        <img src={img} className='content-card__img' alt='logo for card' />
+        {img && (
+          <img src={img} className='content-card__img' alt='logo for card' />
+        )}
         <div className='content-card__list'>
           <List
             dataSource={description}

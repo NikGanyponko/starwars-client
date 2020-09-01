@@ -13,7 +13,7 @@ const People = () => {
 
   useEffect(() => {
     dispatch(fetchPeople())
-  })
+  }, [])
 
   const planetsData = listData.map((item) => {
     const id = item.url.match(/\/(\d+?)\//)[1]
