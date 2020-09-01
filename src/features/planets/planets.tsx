@@ -1,5 +1,15 @@
 import React from 'react'
 
-const Planets = () => <div>Planets</div>
+import Sider from '../../components/sider'
+import Content from '../../components/content'
+
+const Planets = () => {
+  return (
+    <>
+      <Sider />
+      <Content />
+    </>
+  )
+}
 
 export default Planets

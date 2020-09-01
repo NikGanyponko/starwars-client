@@ -15,22 +15,20 @@ const { Text } = Typography
 function App() {
   return (
     <Router>
-      <div className='App'>
+      <div className='app'>
         <div className='app-container'>
           <Layout>
             <Header />
             <Layout>
               <div className='content-container'>
-                <Router>
-                  <Switch>
-                    <Route path='/planets' render={Planets} />
-                    <Route path='/planets/:id' render={Planets} />
-                    <Route path='/people' render={People} />
-                    <Route path='/people/:id' render={People} />
-                    <Route path='/starships' render={Ships} />
-                    <Route path='/starships/:id' render={Ships} />
-                  </Switch>
-                </Router>
+                <Switch>
+                  <Route path='/planets/' render={Planets} />
+                  <Route path='/planets/:id' render={Planets} />
+                  <Route path='/people' render={People} />
+                  <Route path='/people/:id' render={People} />
+                  <Route path='/starships' render={Ships} />
+                  <Route path='/starships/:id' render={Ships} />
+                </Switch>
               </div>
             </Layout>
           </Layout>

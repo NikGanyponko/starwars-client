@@ -1,15 +1,14 @@
 @bg-color: #f0f2f5;
 @bg-color-container: #444;
 
-.App {
+/** APP **/
+.app {
   width: 100%;
   height: 100vh;
-
   display: flex;
   justify-content: center;
   background-color: @bg-color-container;
   border-radius: 0.5rem;
-
   min-width: 1024px;
   background-color: @bg-color;
 }
@@ -18,10 +17,7 @@
   width: 80%;
 }
 
-.content-container {
-  display: flex;
-}
-
+/** HEADER **/
 .header {
   width: 100%;
   display: flex;
@@ -37,12 +33,18 @@
   justify-content: space-around;
 }
 
+/** SIDER **/
 .sider {
   width: 25%;
   height: 38rem;
   background-color: @bg-color-container;
   border-radius: 0.5rem;
   margin: 2rem;
+}
+
+/** CONTENT **/
+.content-container {
+  display: flex;
 }
 
 .content {
