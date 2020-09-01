@@ -9,7 +9,7 @@ export interface IListData {
 
 export interface IContentData {
   img: string
-  description: any[]
+  description: string[]
 }
 
 export interface IListProps {
@@ -19,5 +19,5 @@ export interface IListProps {
 export interface IListItem {
   id: string
   title: string
-  onItemClick(): void
+  onItemClick?(): void
 }
