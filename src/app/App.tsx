@@ -19,7 +19,7 @@ const App = () => {
             <Layout>
               <div className='content-container'>
                 <Switch>
-                  <Route path='/planets/'>
+                  <Route path='/planets'>
                     <Planets />
                   </Route>
                   <Route path='/planets/:id'>

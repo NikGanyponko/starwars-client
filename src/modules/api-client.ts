@@ -2,12 +2,7 @@ import { IApiClient } from '../interfaces/IApi'
 
 class ApiClient implements IApiClient {
   async getResource(url: string) {
-    const _apiUrl = 'https://swapi.dev/api'
-    const res = await fetch(`${_apiUrl}${url}`)
-
-    if (!res.ok) {
-      throw new Error(`Could not fetch ${url} , received ${res.status}`)
-    }
+    const res = await fetch(`https://swapi.dev/api${url}`)
     return res.json()
   }
 
@@ -36,4 +31,4 @@ class ApiClient implements IApiClient {
   }
 }
 
-export default ApiClient
+export default new ApiClient()
