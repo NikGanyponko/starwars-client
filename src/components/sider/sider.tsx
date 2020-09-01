@@ -1,5 +1,4 @@
 import React from 'react'
-
 import List from '../list'
 
 const testData = ['1', '2', '3', '4']

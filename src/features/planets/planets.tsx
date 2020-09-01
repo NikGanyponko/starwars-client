@@ -7,7 +7,7 @@ const Planets = () => {
   return (
     <>
       <Sider />
-      <Content />
+      <Content img='test-url' description={['data1', 'data2', 'data3']} />
     </>
   )
 }

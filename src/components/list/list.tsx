@@ -1,7 +1,8 @@
 import React from 'react'
 import { List as ListAnt, Typography } from 'antd'
+import { IListData } from '../../interfaces/IStore'
 
-const List = ({ listData }: any) => {
+const List = ({ listData }: IListData) => {
   return (
     <ListAnt
       dataSource={listData}

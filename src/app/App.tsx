@@ -2,15 +2,12 @@ import React from 'react'
 import './App.less'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Layout, Typography } from 'antd'
+import { Layout } from 'antd'
 
 import Header from '../components/header'
 import Planets from '../features/planets'
 import People from '../features/people'
 import Ships from '../features/ships'
-
-const { Content } = Layout
-const { Text } = Typography
 
 function App() {
   return (

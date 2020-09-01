@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { BrowserRouter as Router, Switch, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Layout, Typography } from 'antd'
 
 const { Header: HeaderAnt } = Layout
