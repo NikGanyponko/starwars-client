@@ -9,7 +9,7 @@ import Planets from '../features/planets'
 import People from '../features/people'
 import Ships from '../features/ships'
 
-function App() {
+const App = () => {
   return (
     <Router>
       <div className='app'>
@@ -19,12 +19,24 @@ function App() {
             <Layout>
               <div className='content-container'>
                 <Switch>
-                  <Route path='/planets/' render={Planets} />
-                  <Route path='/planets/:id' render={Planets} />
-                  <Route path='/people' render={People} />
-                  <Route path='/people/:id' render={People} />
-                  <Route path='/starships' render={Ships} />
-                  <Route path='/starships/:id' render={Ships} />
+                  <Route path='/planets/'>
+                    <Planets />
+                  </Route>
+                  <Route path='/planets/:id'>
+                    <Planets />
+                  </Route>
+                  <Route path='/people'>
+                    <People />
+                  </Route>
+                  <Route path='/people/:id'>
+                    <People />
+                  </Route>
+                  <Route path='/starships'>
+                    <Ships />
+                  </Route>
+                  <Route path='/starships/:id'>
+                    <Ships />
+                  </Route>
                 </Switch>
               </div>
             </Layout>

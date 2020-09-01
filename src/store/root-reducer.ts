@@ -1,9 +1,9 @@
 import { combineReducers } from '@reduxjs/toolkit'
 
-import featsSliceReducer from '../features/feats-slice'
+import featsReducer from '../features/feats-slice'
 
 const rootReducer = combineReducers({
-  featsSlice: featsSliceReducer,
+  feats: featsReducer,
 })
 
 export type RootState = ReturnType<typeof rootReducer>
