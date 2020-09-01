@@ -1,12 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-
-interface IFeatsSlice {
-  listData: string[]
-  contentData: {
-    img: string
-    description: string[]
-  }
-}
+import { IFeatsSlice, IListData } from '../interfaces/IStore'
 
 const initialState: IFeatsSlice = {
   listData: [],
@@ -17,7 +10,7 @@ const profileSlice = createSlice({
   name: 'featsData',
   initialState,
   reducers: {
-    setListData(state, action: PayloadAction<{ listData: string[] }>) {
+    setListData(state, action: PayloadAction<IListData>) {
       const { listData } = action.payload
       state.listData = listData
     },

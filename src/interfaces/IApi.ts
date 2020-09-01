@@ -1,4 +1,4 @@
-interface IApiClient {
+export interface IApiClient {
   getResource(url: string): Promise<IBaseResponse>
   getAllPeople(): Promise<IAllPersonResponse>
   getPersonById(id: string): Promise<IPersonResponse>
@@ -91,15 +91,4 @@ interface IShipResponse {
   created: string
   edited: string
   url: string
-}
-
-export type {
-  IApiClient,
-  IBaseResponse,
-  IAllPersonResponse,
-  IPersonResponse,
-  IAllPlanetResponse,
-  IPlanetResponse,
-  IAllShipResponse,
-  IShipResponse,
 }

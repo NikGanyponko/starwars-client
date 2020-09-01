@@ -1,4 +1,4 @@
-import { IApiClient } from '../../interfaces/api/IApi'
+import { IApiClient } from '../interfaces/IApi'
 
 class ApiClient implements IApiClient {
   async getResource(url: string) {
