@@ -1,13 +1,9 @@
 import React, { useEffect } from 'react'
-import { useHistory, useLocation, useRouteMatch } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../../store/root-reducer'
-
 import { fetchPlanets, fetchPlanetById } from '../feats-slice'
-import { transformPlanetResponse } from '../../modules/transform-response'
-
-import Sider from '../../components/sider'
 import Content from '../../components/content'
+import Sider from '../../components/sider'
 
 const Planets = () => {
   const dispatch = useDispatch()
@@ -17,7 +13,7 @@ const Planets = () => {
 
   useEffect(() => {
     dispatch(fetchPlanets())
-  }, [])
+  })
 
   const planetsData = listData.map((item) => {
     const id = item.url.match(/\/(\d+?)\//)[1]
@@ -27,8 +23,6 @@ const Planets = () => {
       onItemClick: () => dispatch(fetchPlanetById(id)),
     }
   })
-
-  console.log('contentData', contentData)
 
   return (
     <>

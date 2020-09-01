@@ -11,13 +11,3 @@ export interface IContentData {
   img: string
   description: string[]
 }
-
-export interface IListProps {
-  listData: IListItem[]
-}
-
-export interface IListItem {
-  id: string
-  title: string
-  onItemClick?(): void
-}

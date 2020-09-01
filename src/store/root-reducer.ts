@@ -1,5 +1,4 @@
 import { combineReducers } from '@reduxjs/toolkit'
-
 import featsReducer from '../features/feats-slice'
 
 const rootReducer = combineReducers({

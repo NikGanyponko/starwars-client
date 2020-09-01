@@ -15,7 +15,7 @@ interface IBaseResponse extends Response {
   results: []
 }
 
-interface IAllPersonResponse {
+export interface IAllPersonResponse {
   count: number
   next: string
   previous: null
@@ -65,7 +65,7 @@ export interface IPlanetResponse {
   url: string
 }
 
-interface IAllShipResponse {
+export interface IAllShipResponse {
   count: number
   next: string
   previous: null

@@ -1,6 +1,5 @@
 import React from 'react'
-
-import { IListProps } from '../../interfaces/IStore'
+import { IListProps } from '../../interfaces/IList'
 import List from '../list'
 
 const Sider = ({ listData }: IListProps) => {
