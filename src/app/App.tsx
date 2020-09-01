@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.less'
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Layout, Typography } from 'antd'
 
 import Header from '../components/header'
@@ -23,8 +23,11 @@ function App() {
               <div className='content-container'>
                 <Router>
                   <Switch>
+                    <Route path='/planets' render={Planets} />
                     <Route path='/planets/:id' render={Planets} />
+                    <Route path='/people' render={People} />
                     <Route path='/people/:id' render={People} />
+                    <Route path='/starships' render={Ships} />
                     <Route path='/starships/:id' render={Ships} />
                   </Switch>
                 </Router>

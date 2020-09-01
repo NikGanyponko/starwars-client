@@ -6,3 +6,5 @@ const testData = ['1', '2', '3', '4']
 const List = () => {
   return <ListAnt dataSource={testData} />
 }
+
+export default List
