@@ -33,7 +33,7 @@ export const fetchPeople = createAsyncThunk('planets/fetchPeople', async () => {
 export const fetchPersonById = createAsyncThunk(
   'planets/fetchPersonById',
   async (id: string) => {
-    const response = await api.getPlanetById(id)
+    const response = await api.getPersonById(id)
     return response.json() as Promise<IPersonResponse>
   },
 )
