@@ -1,13 +1,9 @@
 import React from 'react'
 import './App.less'
-
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Layout } from 'antd'
-
-import Header from '../components/header'
-import Planets from '../features/planets'
-import People from '../features/people'
-import Ships from '../features/ships'
+import { Header } from '../components'
+import { People, Planets, Ships } from '../features/'
 
 const App = () => {
   return (
