@@ -40,9 +40,6 @@ export const transformShipResponse = (res: any) => {
 
 export const transformPersonResponse = (res: any) => {
   const id = res.url.match(/\/(\d+?)\//)[1]
-
-  console.log('!!!! ', res)
-
   return {
     description: [
       res.name,
