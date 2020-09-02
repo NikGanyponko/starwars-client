@@ -1,9 +1,3 @@
-import {
-  IPersonResponse,
-  IPlanetResponse,
-  IShipResponse,
-} from '../interfaces/IApi'
-
 export const transformPlanetResponse = (res: any) => {
   const id = res.url.match(/\/(\d+?)\//)[1]
   return {
