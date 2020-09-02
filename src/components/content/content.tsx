@@ -18,7 +18,7 @@ const Sider = ({ img, description }: IContentData) => {
             dataSource={description}
             renderItem={(item: string) => (
               <List.Item>
-                <Text>{item}</Text>
+                <Text className='list-item__text'>{item}</Text>
               </List.Item>
             )}
           />

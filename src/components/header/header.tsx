@@ -18,21 +18,21 @@ const Header = () => {
             dispatch(clearContentData())
             return { ...location, pathname: '/planets' }
           }}>
-          <Text>Planets</Text>
+          <Text className='header-content__text'>Planets</Text>
         </Link>
         <Link
           to={(location) => {
             dispatch(clearContentData())
             return { ...location, pathname: '/people' }
           }}>
-          <Text>People</Text>
+          <Text className='header-content__text'>People</Text>
         </Link>
         <Link
           to={(location) => {
             dispatch(clearContentData())
             return { ...location, pathname: '/starships' }
           }}>
-          <Text>Starships</Text>
+          <Text className='header-content__text'>Starships</Text>
         </Link>
       </div>
     </HeaderAnt>
