@@ -1,3 +1,4 @@
+//TODO fix listData any[]
 export interface IFeatsSlice {
   listData: any[]
   contentData: IContentData
