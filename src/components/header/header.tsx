@@ -9,7 +9,7 @@ const { Text } = Typography
 
 const Header = () => {
   const dispatch = useDispatch()
-
+  //TODO ::: fix ()=>{} in render method ;
   return (
     <HeaderAnt className='header'>
       <div className='header-content'>

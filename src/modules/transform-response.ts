@@ -1,3 +1,4 @@
+// TODO ::: fix it ! can be place with troubles => obj is null, re.url does not exist in obj ;
 export const transformPlanetResponse = (res: any) => {
   const id = res.url.match(/\/(\d+?)\//)[1]
   return {
@@ -16,6 +17,7 @@ export const transformPlanetResponse = (res: any) => {
   }
 }
 
+// TODO ::: fix it! can be place with troubles => obj is null, re.url does not exist in obj ;
 export const transformShipResponse = (res: any) => {
   const id = res.url.match(/\/(\d+?)\//)[1]
   return {
@@ -38,6 +40,7 @@ export const transformShipResponse = (res: any) => {
   }
 }
 
+// TODO ::: fix it! can be place with troubles => obj is null, re.url does not exist in obj ;
 export const transformPersonResponse = (res: any) => {
   const id = res.url.match(/\/(\d+?)\//)[1]
   return {
