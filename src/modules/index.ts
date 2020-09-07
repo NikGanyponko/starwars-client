@@ -5,7 +5,7 @@ import {
   transformShipResponse,
   transformPersonResponse,
 } from './transform-response'
-import locale from './locale/en.json'
+import locale from './locale-en.json'
 
 export {
   api,
