@@ -8,13 +8,6 @@ export interface IApiClient {
   getShipById(id: string): Promise<Response>
 }
 
-interface IBaseResponse extends Response {
-  count: number
-  next: string
-  previous: null
-  results: []
-}
-
 export interface IAllPersonResponse {
   count: number
   next: string

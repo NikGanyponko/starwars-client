@@ -1,11 +1,11 @@
-//TODO fix listData any[]
+import { IPlanetResponse, IPersonResponse, IShipResponse } from './IApi'
 export interface IFeatsSlice {
-  listData: any[]
+  listData: (IPlanetResponse | IPersonResponse | IShipResponse)[]
   contentData: IContentData
 }
 
 export interface IListData {
-  listData: any[]
+  listData: (IPlanetResponse | IPersonResponse | IShipResponse)[]
 }
 
 export interface IContentData {
