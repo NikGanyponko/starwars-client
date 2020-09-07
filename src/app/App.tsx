@@ -21,7 +21,7 @@ const App = () => {
                   <Route path='/people'>
                     <People />
                   </Route>
-                  <Route path='/starships'>
+                  <Route path='/star-ships'>
                     <Ships />
                   </Route>
                 </Switch>
