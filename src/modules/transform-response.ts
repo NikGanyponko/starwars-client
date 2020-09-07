@@ -1,6 +1,19 @@
-// TODO ::: fix it ! can be place with troubles => obj is null, re.url does not exist in obj ;
-export const transformPlanetResponse = (res: any) => {
-  const id = res.url.match(/\/(\d+?)\//)[1]
+import {
+  IPlanetResponse,
+  IPersonResponse,
+  IShipResponse,
+} from '../interfaces/IApi'
+
+export const matchId = (url: string) => {
+  const matchers = url.match(/\/(\d+?)\//)
+  const id = matchers && matchers[1]
+  return id as string
+}
+
+export const transformPlanetResponse = (res: IPlanetResponse) => {
+  const { url } = res
+  const id = matchId(url)
+
   return {
     description: [
       res.name,
@@ -17,9 +30,10 @@ export const transformPlanetResponse = (res: any) => {
   }
 }
 
-// TODO ::: fix it! can be place with troubles => obj is null, re.url does not exist in obj ;
-export const transformShipResponse = (res: any) => {
-  const id = res.url.match(/\/(\d+?)\//)[1]
+export const transformShipResponse = (res: IShipResponse) => {
+  const { url } = res
+  const id = matchId(url)
+
   return {
     description: [
       res.name,
@@ -40,9 +54,10 @@ export const transformShipResponse = (res: any) => {
   }
 }
 
-// TODO ::: fix it! can be place with troubles => obj is null, re.url does not exist in obj ;
-export const transformPersonResponse = (res: any) => {
-  const id = res.url.match(/\/(\d+?)\//)[1]
+export const transformPersonResponse = (res: IPersonResponse) => {
+  const { url } = res
+  const id = matchId(url)
+
   return {
     description: [
       res.name,

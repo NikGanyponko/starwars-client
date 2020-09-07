@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../../store/root-reducer'
 import { fetchPeople, fetchPersonById } from '../feats-thunk'
 import { Content, Sider } from '../../components'
+import { matchId } from '../../modules/transform-response'
 
 const People = () => {
   const dispatch = useDispatch()
@@ -15,7 +16,9 @@ const People = () => {
   }, [dispatch])
 
   const planetsData = listData.map((item) => {
-    const id = item.url.match(/\/(\d+?)\//)[1]
+    const { url } = item
+    const id = matchId(url)
+
     return {
       title: item.name,
       id: id,
