@@ -6,7 +6,7 @@ const { Text } = Typography
 
 const ItemList = ({ id, title, onItemClick }: IListItem) => {
   return (
-    <ListAnt.Item key={id} onClick={onItemClick}>
+    <ListAnt.Item className='clickable' key={id} onClick={onItemClick}>
       <Text className='list-item__text margin-left1'>{title}</Text>
     </ListAnt.Item>
   )

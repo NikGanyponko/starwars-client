@@ -1,6 +1,10 @@
 @bg-color: #f0f2f5;
 @bg-color-container: #444;
 
+.clickable {
+  cursor: pointer;
+}
+
 /** APP **/
 .app {
   width: 100%;
@@ -49,15 +53,15 @@
 }
 
 /** CONTENT **/
-.content-container {
-  display: flex;
-}
-
 .content {
   height: 38rem;
   background-color: @bg-color-container;
   border-radius: 0.5rem;
   margin: 2rem;
+}
+
+.content-container {
+  display: flex;
 }
 
 .content-card {
