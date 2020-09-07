@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { clearContentData } from '../../features/feats-slice'
 import { Layout, Typography } from 'antd'
@@ -9,31 +9,29 @@ const { Text } = Typography
 
 const Header = () => {
   const dispatch = useDispatch()
-  //TODO ::: fix ()=>{} in render method ;
+  const history = useHistory()
+
+  const menuItemClick = (path: string) => {
+    dispatch(clearContentData)
+    history.push(path)
+  }
+
+  const planetsClick = () => menuItemClick('/planets')
+  const peopleClick = () => menuItemClick('/people')
+  const shipsClick = () => menuItemClick('/star-ships')
+
   return (
     <HeaderAnt className='header'>
       <div className='header-content'>
-        <Link
-          to={(location) => {
-            dispatch(clearContentData())
-            return { ...location, pathname: '/planets' }
-          }}>
+        <div className='clickable' onClick={planetsClick}>
           <Text className='header-content__text'>Planets</Text>
-        </Link>
-        <Link
-          to={(location) => {
-            dispatch(clearContentData())
-            return { ...location, pathname: '/people' }
-          }}>
+        </div>
+        <div className='clickable' onClick={peopleClick}>
           <Text className='header-content__text'>People</Text>
-        </Link>
-        <Link
-          to={(location) => {
-            dispatch(clearContentData())
-            return { ...location, pathname: '/starships' }
-          }}>
+        </div>
+        <div className='clickable' onClick={shipsClick}>
           <Text className='header-content__text'>Starships</Text>
-        </Link>
+        </div>
       </div>
     </HeaderAnt>
   )
