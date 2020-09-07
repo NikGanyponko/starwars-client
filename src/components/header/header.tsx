@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { clearContentData } from '../../features/feats-slice'
 import { Layout, Typography } from 'antd'
+import { locale } from '../../modules'
 
 const { Header: HeaderAnt } = Layout
 const { Text } = Typography
@@ -24,13 +25,13 @@ const Header = () => {
     <HeaderAnt className='header'>
       <div className='header-content'>
         <div className='clickable' onClick={planetsClick}>
-          <Text className='header-content__text'>Planets</Text>
+          <Text className='header-content__text'>{locale.planets}</Text>
         </div>
         <div className='clickable' onClick={peopleClick}>
-          <Text className='header-content__text'>People</Text>
+          <Text className='header-content__text'>{locale.people}</Text>
         </div>
         <div className='clickable' onClick={shipsClick}>
-          <Text className='header-content__text'>Starships</Text>
+          <Text className='header-content__text'>{locale.ships}</Text>
         </div>
       </div>
     </HeaderAnt>
