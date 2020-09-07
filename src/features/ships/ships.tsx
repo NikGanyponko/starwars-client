@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../../store/root-reducer'
 import { fetchShips, fetchShipById } from '../feats-thunk'
 import { Content, Sider } from '../../components'
-import { matchId } from '../../modules/transform-response'
+import { matchId } from '../../modules'
 
 const Ships = () => {
   const dispatch = useDispatch()

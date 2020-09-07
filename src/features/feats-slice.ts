@@ -12,7 +12,7 @@ import {
   transformPlanetResponse,
   transformPersonResponse,
   transformShipResponse,
-} from '../modules/transform-response'
+} from '../modules'
 
 const initialState: IFeatsSlice = {
   listData: [],
