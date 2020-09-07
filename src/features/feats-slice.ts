@@ -32,20 +32,38 @@ const profileSlice = createSlice({
       .addCase(fetchPlanets.fulfilled, (state, action) => {
         state.listData = action.payload.results
       })
+      .addCase(fetchPlanets.rejected, (state) => {
+        state.listData = []
+      })
       .addCase(fetchPlanetById.fulfilled, (state, action) => {
         state.contentData = transformPlanetResponse(action.payload)
+      })
+      .addCase(fetchPlanetById.rejected, (state) => {
+        state.contentData = { img: '', description: [] }
       })
       .addCase(fetchPeople.fulfilled, (state, action) => {
         state.listData = action.payload.results
       })
+      .addCase(fetchPeople.rejected, (state) => {
+        state.listData = []
+      })
       .addCase(fetchPersonById.fulfilled, (state, action) => {
         state.contentData = transformPersonResponse(action.payload)
+      })
+      .addCase(fetchPersonById.rejected, (state) => {
+        state.contentData = { img: '', description: [] }
       })
       .addCase(fetchShips.fulfilled, (state, action) => {
         state.listData = action.payload.results
       })
+      .addCase(fetchShips.rejected, (state) => {
+        state.listData = []
+      })
       .addCase(fetchShipById.fulfilled, (state, action) => {
         state.contentData = transformShipResponse(action.payload)
+      })
+      .addCase(fetchShipById.rejected, (state) => {
+        state.contentData = { img: '', description: [] }
       })
   },
 })
