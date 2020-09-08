@@ -2,7 +2,7 @@ import {
   IPlanetResponse,
   IPersonResponse,
   IShipResponse,
-} from '../interfaces/IApi'
+} from '../../interfaces/IApi'
 
 export const matchId = (url: string) => {
   const matchers = url.match(/\/(\d+?)\//)

@@ -7,7 +7,7 @@ import {
   IAllShipResponse,
   IShipResponse,
 } from '../interfaces/IApi'
-import api from '../modules/api-client'
+import api from '../modules/api/api-client'
 
 export const fetchPlanets = createAsyncThunk(
   'planets/fetchPlanets',

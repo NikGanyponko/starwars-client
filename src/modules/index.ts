@@ -1,11 +1,11 @@
-import api from './api-client'
+import api from './api/api-client'
 import {
   matchId,
   transformPlanetResponse,
   transformShipResponse,
   transformPersonResponse,
-} from './transform-response'
-import locale from './locale-en.json'
+} from './utills/transform-response'
+import locale from './locales/locale-en.json'
 
 export {
   api,
