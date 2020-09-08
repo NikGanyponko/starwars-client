@@ -17,7 +17,7 @@ const MainFeat = ({ fetchGroup, fetchItem }: IMainFeat) => {
 
   useEffect(() => {
     dispatch(fetchGroup())
-  }, [dispatch])
+  }, [dispatch, fetchGroup])
 
   const data = listData.map((item) => {
     const { url } = item

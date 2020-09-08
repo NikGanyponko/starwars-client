@@ -14,7 +14,7 @@ const Header = () => {
   const { pathname } = useLocation()
 
   const menuItemClick = (path: string) => {
-    dispatch(clearContentData)
+    dispatch(clearContentData())
     history.push(path)
   }
 
