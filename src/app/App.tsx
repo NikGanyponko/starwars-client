@@ -2,7 +2,7 @@ import React from 'react'
 import './App.less'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Layout } from 'antd'
-import { Header } from '../components'
+import { Header, NoMatch } from '../components'
 import { People, Planets, Ships } from '../features/'
 
 const App = () => {
@@ -23,6 +23,9 @@ const App = () => {
                   </Route>
                   <Route path='/star-ships'>
                     <Ships />
+                  </Route>
+                  <Route path='*'>
+                    <NoMatch />
                   </Route>
                 </Switch>
               </div>
