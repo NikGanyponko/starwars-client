@@ -24,7 +24,7 @@ const App = () => {
                   <Route path='/star-ships'>
                     <Ships />
                   </Route>
-                  <Route>
+                  <Route path='/' exact>
                     <HelloPage />
                   </Route>
                   <Route path='*'>
