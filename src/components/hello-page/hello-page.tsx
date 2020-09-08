@@ -4,7 +4,7 @@ import mainImg from '../../assets/main-img.png'
 const HelloPage = () => {
   return (
     <div className='main-gape'>
-      <img src={mainImg} />
+      <img src={mainImg} alt='main page logo' />
     </div>
   )
 }
